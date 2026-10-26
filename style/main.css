@@ -5,9 +5,12 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
+<<<<<<< HEAD
   --primary-color: #4F46E5;
   --primary-hover: #4338CA;
   --bg-color: #f3f4f62d;
@@ -18,21 +21,137 @@
   --transition: 0.4s;
   --border-radius: 5px;
   --box-shadow: 0 2px 3px rgba(255, 255, 255, 0.1);
+=======
+  /* لوحة الألوان العصرية الحديثة */
+  --master-color: #f8fafc;        /* خلفية نقيّة هادئة (Slate 50) */
+  --card-bg: #FFFFFF;             /* خلفية الكروت والهيدر بيضاء ناصعة */
+  --text-main: #0f172a;           /* لون النصوص الرئيسية داكن وواضح (Slate 900) */
+  --text-secondary: #475569;      /* لون النصوص الفرعية (Slate 600) */
+
+  /* الألوان العصرية (Primary & Accent) */
+  --primary-color: #6366f1;       /* أزرق نيلي عصري (Indigo 500) للأيقونات والعناوين */
+  --primary-hover: #4f46e5;       /* درجة أغمق للهوفر */
+  --accent-color: #f97316;        /* برتقالي حيوي وفخم (Orange 500) للأزرار الهامة */
+  --accent-hover: #ea580c;        /* درجة الهوفر لزر الأكشن */
+
+  /* المتغيرات العامة */
+  --transition: 0.25s ease-in-out;
+  --border-radius: 10px;          /* زوايا دائرية أنعم وأكثر عصرية */
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* ظل ناعم وحديث */
+  --master-padding: 14px;
+>>>>>>> 3ca0671 (I chage the project)
 }
 
-body {
-  background: linear-gradient(95deg, #000000 5%, #290404 100%);
+body { 
+  background-color: var(--master-color);
   background-attachment: fixed;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
   position: relative;
+  padding-top: 70px;
+}
+
+header {
+  width: 100%;
+  background-color: var(--card-bg);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  @media (max-width: 767px) {
+    padding: 10px 12px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    
+    i {
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary-color);
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--primary-hover);
+      }
+      
+      @media (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .nav {
+    .ul-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      li {
+        position: relative;
+
+        a {
+          i {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            transition: var(--transition);
+            
+            @media (max-width: 767px) {
+              font-size: 16px;
+            }
+          }
+
+          &:hover i {
+            color: var(--accent-color); /* تداخل لوني أنيق عند الهوفر */
+          }
+        }
+      }
+    }
+  }
+
+  .sign {
+    display: flex;
+    gap: 10px;
+
+    button {
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: var(--accent-color); /* زر مميز بالحيوية والعصرية */
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      border: none;
+      
+      &:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25); /* ظل ملون خفيف عند الهوفر */
+      }
+      
+      @media (max-width: 767px) {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+    }
+  }
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
+<<<<<<< HEAD
   padding: 10px 15px;
 
   @media (max-width: 767px) {
@@ -178,25 +297,87 @@ body {
     }
   }
 }
+=======
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 
-/* Media queries*/
-@media (min-width: 768px) {
-  .container {
-    max-width: 750px;
+  .content {
+    padding: var(--master-padding);
+    width: 70%;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(226, 232, 240, 0.8); /* حدود خفيفة جداً تزيد من فخامة الكارت */
+>>>>>>> 3ca0671 (I chage the project)
+
+    @media (max-width: 767px) {
+      width: 100%;  
+    }
+
+    .header {
+      width: 100%;
+      height: 60px;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: var(--master-padding);
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--primary-color); /* إطار ناعم لصورة البروفايل باللون الرئيسي */
+      }
+
+<<<<<<< HEAD
+=======
+      h3 {
+        color: var(--text-main);
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .body {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: var(--master-padding);
+      text-align: left;
+      border-bottom: 1px solid #f1f5f9;
+      img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: var(--border-radius);
+        margin: 10px 0;
+      }
+
+      h4 {
+        margin: 10px 0 5px;
+        color: var(--text-main);
+        font-size: 18px;
+      }
+
+      p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
   }
 }
+>>>>>>> 3ca0671 (I chage the project)
 
-@media (min-width: 992px) {
-  .container {
-    max-width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
-}
-
-
+/* Media queries for container width */
+@media (min-width: 768px) { .container { max-width: 750px; } }
+@media (min-width: 992px) { .container { max-width: 970px; } }
+@media (min-width: 1200px) { .container { max-width: 1170px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } }
 /* End globals rules */
