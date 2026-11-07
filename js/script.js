@@ -1,10 +1,11 @@
 
 let container = document.querySelector('.container');
+let loading = document.getElementById('loading');
 
-
-axios.get('https://tarmeezacademy.com/api/v1/posts?limit=30')
+axios.get('https://tarmeezacademy.com/api/v1/posts?limit=5')
   .then((response) => {
     const posts = response.data.data;
+
     let htmlContent = "";
     for (let post of posts) {
       let authorImage = post.author && post.author.profile_image ? post.author.profile_image : "";
@@ -55,7 +56,7 @@ buttonLogIn.addEventListener('click', function () {
           <form action="" method="post">
             <input type="email" name="email" id="email" placeholder="Enter Yor Email">
             <input type="password" name="password" id="pass" placeholder="Enter Your Password">
-            <button>تسجيل دخول</button>
+            <button>Login</button>
           </form>
         </div>
 
